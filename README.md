@@ -20,7 +20,8 @@ A lightweight, high-performance C++17 library for Windows dynamic memory analysi
 ## 🚀 Quickstart Example
 
 ```cpp
-#include "Hooking.h"
+#include "Hooking/Hooking.h"
+#include <string_view>
 
 // Define original function signature
 typedef int (WINAPI* fnMessageBoxA)(HWND, LPCSTR, LPCSTR, UINT);
@@ -29,7 +30,7 @@ InlineHooking hkMessageBox;
 // Detour Callback
 int WINAPI hkMessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, UINT uType) {
     auto oOriginal = hkMessageBox.GetOriginal<fnMessageBoxA>();
-    
+
     // Inspect or modify parameters safely using C++ string views
     if (lpCaption && std::string_view(lpCaption) == "Target Exception") {
         lpText = "Interrupted by Hook Engine!";
@@ -50,3 +51,4 @@ int main() {
 
     Hooking::Shutdown();
 }
+```
