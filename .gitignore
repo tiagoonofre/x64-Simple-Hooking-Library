@@ -1,32 +1,117 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
+# =========================================================================
+# Executables, Libraries, and Object Files
+# =========================================================================
 *.o
 *.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
 *.so
 *.dylib
 *.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
 *.a
 *.lib
+*.lo
+*.la
 
-# Executables
+# Common Executable Extensions
 *.exe
 *.out
 *.app
+*.elf
+
+# =========================================================================
+# Build Directories
+# =========================================================================
+# CMake & General Build Output
+[Bb]uild/
+[Bb]in/
+[Ob]j/
+[Dd]ebug/
+[Rr]elease/
+out/
+cmake-build-*/
+
+# Ninja & Make Artifacts
+*.ninja
+*.ninja_deps
+*.ninja_log
+Makefile
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+CTESTTestfile.cmake
+install_manifest.txt
+
+# Precompiled Headers & Modules
+*.gch
+*.pch
+*.ifc
+*.smi
+
+# =========================================================================
+# IDEs & Editors
+# =========================================================================
+# Visual Studio
+.vs/
+*.vcxproj.user
+*.vcxproj.filelist.xml
+*.suo
+*.user
+*.userosv
+*.sln.docstates
+x64/
+x86/
+ARM/
+ARM64/
+
+# CLion & JetBrains
+.idea/
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Eclipse / Xcode
+.settings/
+.project
+.cproject
+*.xcodeproj/
+*.xcworkspace/
+
+# =========================================================================
+# Package Managers & Dependencies
+# =========================================================================
+# Conan
+conanbuildinfo.*
+conaninfo.txt
+conan.lock
+graph_info.json
+
+# vcpkg
+vcpkg_installed/
+
+# =========================================================================
+# Profiling, Testing, & Diagnostics
+# =========================================================================
+*.gcda
+*.gcno
+*.gcov
+*.core
+core
+*.dSYM/
+*.su
+*.tlog
+
+# =========================================================================
+# Operating System Files
+# =========================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
