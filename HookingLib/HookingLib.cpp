@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string_view>
 #include "Hooking/Hooking.h"
 
 typedef int (WINAPI* fnMessageBoxA)(HWND, LPCSTR, LPCSTR, UINT);
@@ -14,7 +15,7 @@ int __stdcall hkMessageboxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, UINT uTy
 {
 	auto oOriginal = hkMessageBox.GetOriginal<fnMessageBoxA>();
 
-	if (lpCaption == "Hello World!") {
+	if (lpCaption && std::string_view(lpCaption) == "Hello World!") {
 
 		lpText = "Hey now, you're a rockstar!";
 	}
