@@ -27,23 +27,7 @@ int main()
 {
 	Hooking::Init();
 
-	HMODULE pUser32Dll = GetModuleHandleA("user32.dll");
-
-	if (pUser32Dll == 0) {
-
-		std::cout << "Failed to get user32.dll Adress" << std::endl;
-		system("pause");
-		exit(1);
-	}
-
-	uintptr_t* pMessageBoxA = (uintptr_t*)GetProcAddress(pUser32Dll, "MessageBoxA");
-
-	if (!pMessageBoxA) {
-
-		std::cout << "Failed to get MessageBoxA Adress" << std::endl;
-		system("pause");
-		exit(1);
-	}
+	uintptr_t* pMessageBoxA = (uintptr_t*)GetProcAddress(GetModuleHandleA("user32.dll"), "MessageBoxA");
 
 	ShowMessageBox();
 
